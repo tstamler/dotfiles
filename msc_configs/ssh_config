@@ -1,0 +1,28 @@
+Host heroku.com
+ HostName heroku.com
+ Port 22
+ IdentitiesOnly yes
+ IdentityFile ~/.ssh/id_rsa
+ TCPKeepAlive yes
+ User tylerscotthunt@gmail.com
+
+Host github github.com
+ HostName github.com
+ User git
+
+Host bitbucket bitbucket.org
+ HostName bitbucket.org
+ User git
+
+Host *.cs.utexas.edu *.csres.utexas.edu
+ User thunt
+
+Host *.csres
+ HostName %h.utexas.edu
+ User thunt
+
+Host *.*
+ HostName %h
+
+Host *
+ HostName %h.cs.utexas.edu

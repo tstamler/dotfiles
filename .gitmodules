@@ -1,3 +1,18 @@
-[submodule "shells/zsh/.oh-my-zsh"]
-	path = shells/zsh/.oh-my-zsh
-	url = git@github.com:robbyrussell/oh-my-zsh
+[submodule "editors/vim/vim/bundle/base16-vim"]
+	path = editors/vim/vim/bundle/base16-vim
+	url = github:chriskempson/base16-vim.git
+[submodule "editors/vim/vim/bundle/bufkill.vim"]
+	path = editors/vim/vim/bundle/bufkill.vim
+	url = github:vim-scripts/bufkill.vim
+[submodule "editors/vim/vim/bundle/nerdtree"]
+	path = editors/vim/vim/bundle/nerdtree
+	url = github:scrooloose/nerdtree
+[submodule "editors/vim/vim/bundle/vim-fugitive"]
+	path = editors/vim/vim/bundle/vim-fugitive
+	url = github:tpope/vim-fugitive
+[submodule "editors/vim/vim/bundle/vim-multiple-cursors"]
+	path = editors/vim/vim/bundle/vim-multiple-cursors
+	url = github:terryma/vim-multiple-cursors
+[submodule "editors/vim/vim/bundle/vim-tmux-navigator"]
+	path = editors/vim/vim/bundle/vim-tmux-navigator
+	url = github:christoomey/vim-tmux-navigator

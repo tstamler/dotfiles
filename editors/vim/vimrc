@@ -1,0 +1,31 @@
+set nocompatible
+set modeline
+set modelines=5
+set t_Co=16
+set autoindent
+"set smartindent
+"set cindent
+"set number
+set hidden
+au BufRead *.txt setlocal spell
+au Bufread *.tex setlocal spell
+set tabstop=3
+let _curfile = expand("%:t")
+set expandtab
+set shiftwidth=3
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+set laststatus=2
+python del powerline_setup
+call pathogen#infect()
+let NERDTreeIgnore = ['\.o$','\.d']
+set background=dark
+let base16colorspace=256
+colorscheme base16-default
+filetype plugin indent on
+" Command Make will call make and then cwindow which
+" opens a 3 line error window if any errors are found.
+" If no errors, it closes any open cwindow.
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+set cc=80
