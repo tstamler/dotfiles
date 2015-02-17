@@ -124,9 +124,13 @@ function __prompt_command() {
     if [ $branch ]
     then PS1+=" ($branch)"
     fi
-    PS1+="\n${RCol}[${exitCode}]${BYel}$ ${RCol}"
+
+    bkgrnd=`jobs | pythex -g '\[(\d+)\]'`
+    [ $bkgrnd ] && bkgrnd="($bkgrnd)"
+
+    
+    PS1+="\n${RCol}[${exitCode}]${BYel}${bkgrnd}$ ${RCol}"
 }
 
 export PROMPT_COMMAND=__prompt_command  # Func to gen PS1 after CMDs
-export GAIA_REPO=/home/tyler/ffos_project/gaia
 set -o vi

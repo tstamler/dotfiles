@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+
+# Evaluate python style regexes on the fly
+
+import re;
+import sys;
+import argparse;
+
+def main(args):
+    regex = re.compile(args.regex);
+    for line in sys.stdin:
+        match = regex.search(line)
+        if match:
+            if args.groupings:
+                for i in xrange(1, regex.groups+1):
+                    print match.group(i),
+                print
+            else:
+                print match.group(0)
+        else:
+            print
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="apply a python style regex"+
+                                     " to each line of stdin")
+    parser.add_argument("regex", type=str, help="regex to apply to stdin")
+    parser.add_argument("-g", "--groupings", action="store_true",
+                        help="ouput only groupings (separated by a space);")
+    return parser.parse_args()
+
+if __name__ == '__main__':
+    main(parse_args())
