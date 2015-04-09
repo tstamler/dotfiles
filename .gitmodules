@@ -16,3 +16,9 @@
 [submodule "editors/vim/vim/bundle/vim-tmux-navigator"]
 	path = editors/vim/vim/bundle/vim-tmux-navigator
 	url = github:christoomey/vim-tmux-navigator
+[submodule "editors/vim/vim/vim-javascript-syntax"]
+	path = editors/vim/vim/vim-javascript-syntax
+	url = github:jelera/vim-javascript-syntax
+[submodule "editors/vim/vim/bundle/tagbar"]
+	path = editors/vim/vim/bundle/tagbar
+	url = github:majutsushi/tagbar
