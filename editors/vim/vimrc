@@ -6,6 +6,7 @@ set autoindent
 "set smartindent
 "set cindent
 "set number
+call pathogen#infect()
 set hidden
 au BufRead *.txt setlocal spell
 au Bufread *.tex setlocal spell
@@ -17,7 +18,6 @@ python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 set laststatus=2
 python del powerline_setup
-call pathogen#infect()
 let NERDTreeIgnore = ['\.o$','\.d']
 set background=dark
 let base16colorspace=256
@@ -29,3 +29,4 @@ filetype plugin indent on
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 set cc=80
+nmap t :TagbarToggle<CR>
