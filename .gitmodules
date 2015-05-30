@@ -22,3 +22,12 @@
 [submodule "editors/vim/vim/bundle/tagbar"]
 	path = editors/vim/vim/bundle/tagbar
 	url = github:majutsushi/tagbar
+[submodule "editors/vim/vim/bundle/ctrlp.vim"]
+	path = editors/vim/vim/bundle/ctrlp.vim
+	url = github:kien/ctrlp.vim
+[submodule "editors/vim/vim/bundle/local_vimrc"]
+	path = editors/vim/vim/bundle/local_vimrc
+	url = github:LucHermitte/local_vimrc
+[submodule "editors/vim/vim/bundle/lh-vim-lib"]
+	path = editors/vim/vim/bundle/lh-vim-lib
+	url = github:LucHermitte/lh-vim-lib

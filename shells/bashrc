@@ -135,3 +135,4 @@ function __prompt_command() {
 
 export PROMPT_COMMAND=__prompt_command  # Func to gen PS1 after CMDs
 set -o vi
+export PATH="/usr/lib/ccache:$PATH"

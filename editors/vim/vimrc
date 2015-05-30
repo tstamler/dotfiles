@@ -30,3 +30,15 @@ autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 set cc=80
 nmap t :TagbarToggle<CR>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+set wildmode=longest,list,full
+set wildmenu
+
+"I'm bad at spelling
+" Git commits.
+autocmd FileType gitcommit setlocal spell
+" Subversion commits.
+autocmd FileType svn       setlocal spell
+" Mercurial commits.
+autocmd FileType asciidoc  setlocal spell
