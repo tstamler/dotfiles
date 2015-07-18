@@ -31,3 +31,6 @@
 [submodule "editors/vim/vim/bundle/lh-vim-lib"]
 	path = editors/vim/vim/bundle/lh-vim-lib
 	url = github:LucHermitte/lh-vim-lib
+[submodule "editors/vim/vim/bundle/vim-better-whitespace"]
+	path = editors/vim/vim/bundle/vim-better-whitespace
+	url = github:ntpeters/vim-better-whitespace
