@@ -14,31 +14,71 @@ set tabstop=3
 let _curfile = expand("%:t")
 set expandtab
 set shiftwidth=3
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
 set laststatus=2
-python del powerline_setup
+let base16colorspace=256
+colorscheme base16-monokai
 let NERDTreeIgnore = ['\.o$','\.d']
 set background=dark
+
 let base16colorspace=256
-colorscheme base16-default
 filetype plugin indent on
 " Command Make will call make and then cwindow which
 " opens a 3 line error window if any errors are found.
 " If no errors, it closes any open cwindow.
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
-set cc=80
+autocmd QuickFixCmdPost  make nested botright cwindow
+let &colorcolumn=join(range(81,999),",")
+
 nmap t :TagbarToggle<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 set wildmode=longest,list,full
 set wildmenu
 
+let g:rainbow_active = 0
+let g:rainbow_conf = {
+\   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+\   'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+\   'operators': '_,_',
+\   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\   'separately': {
+\       '*': {},
+\       'tex': {
+\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+\       },
+\       'lisp': {
+\           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+\       },
+\       'vim': {
+\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+\       },
+\       'html': {
+\           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+\       },
+\       'css': 0,
+\   }
+\}
+
 "I'm bad at spelling
 " Git commits.
-autocmd FileType gitcommit setlocal spell
+"autocmd FileType gitcommit setlocal spell
 " Subversion commits.
-autocmd FileType svn       setlocal spell
+"autocmd FileType svn       setlocal spell
 " Mercurial commits.
-autocmd FileType asciidoc  setlocal spell
+"autocmd FileType asciidoc  setlocal spell
+set spell
+let g:airline#extensions#whitespace#show_message = 0
+let g:airline_powerline_fonts = 1
+"CSCOPE
+function! LoadCscope()
+  let db = findfile("cscope.out", ".;")
+  if (!empty(db))
+    let path = strpart(db, 0, match(db, "/cscope.out$"))
+    set nocscopeverbose " suppress 'duplicate connection' error
+    exe "cs add " . db . " " . path
+    set cscopeverbose
+  endif
+endfunction
+au BufEnter /* call LoadCscope()
+

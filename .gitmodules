@@ -34,3 +34,12 @@
 [submodule "editors/vim/vim/bundle/vim-better-whitespace"]
 	path = editors/vim/vim/bundle/vim-better-whitespace
 	url = github:ntpeters/vim-better-whitespace
+[submodule "editors/vim/vim/bundle/vim-airline"]
+	path = editors/vim/vim/bundle/vim-airline
+	url = github:bling/vim-airline
+[submodule "editors/vim/vim/bundle/rainbow"]
+	path = editors/vim/vim/bundle/rainbow
+	url = github:luochen1990/rainbow
+[submodule "editors/vim/vim/bundle/taboo.vim"]
+	path = editors/vim/vim/bundle/taboo.vim
+	url = github:gcmt/taboo.vim
