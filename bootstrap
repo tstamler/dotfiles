@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+mkdir -p $HOME/.ssh
+ln -sf $PWD/msc_configs/ssh_config $HOME/.ssh/config
+ln -sf $PWD/shells/bashrc $HOME/.bashrc
+ln -sf $PWD/editors/vim/vim $HOME/.vim
+ln -sf $PWD/editors/vim/vimrc $HOME/.vimrc
