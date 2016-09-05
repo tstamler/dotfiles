@@ -114,8 +114,21 @@ function __prompt_command() {
     local Pur='\[\e[0;35m\]'
 
     local exitCode=
+    local SESSION_TYPE=
 
-    PS1+="${Gre}\u${RCol}"
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+      SESSION_TYPE=ssh
+    else
+      case $(ps -o comm= -p $PPID) in
+        sshd|*/sshd) SESSION_TYPE=ssh;;
+      esac
+    fi
+
+    if [ $SESSION_TYPE == "ssh" ]; then
+       PS1+="${Red}(ssh)"
+    else
+       PS1+="${BBlu}"
+    fi
 
     if [ $EXIT != 0 ]; then
         exitCode="${Red}$EXIT${RCol}"      # Add red if exit code non 0
@@ -123,11 +136,12 @@ function __prompt_command() {
         exitCode="${Gre}$EXIT${RCol}"
     fi
 
-    PS1+="${RCol}@${BBlu}\h: ${Pur}\w${BYel}"
+    PS1+="\h: ${Pur}\w"
     local branch=`git branch 2>/dev/null | grep \* | awk '{print $2}'`
     if [ $branch ]
-    then PS1+=" ($branch)"
+    then PS1+=" ${BYel}($branch)"
     fi
+    PS1+=" ${RCol}[\t]"
 
 #    bkgrnd=`jobs | pythex -g '\[(\d+)\]'
 #    [ $bkgrnd ] && bkgrnd="($bkgrnd)"
