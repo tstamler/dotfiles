@@ -28,7 +28,7 @@ filetype plugin indent on
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 autocmd QuickFixCmdPost  make nested botright cwindow
-let &colorcolumn=join(range(81,999),",")
+set colorcolumn=+1
 
 nmap t :TagbarToggle<CR>
 let g:ctrlp_map = '<c-p>'
