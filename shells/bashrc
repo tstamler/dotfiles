@@ -92,8 +92,8 @@ fi
 
 export TERM=xterm-256color
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+#BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
+#[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 
 
@@ -161,3 +161,6 @@ PERL_MB_OPT="--install_base \"/home/thunt/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/thunt/perl5"; export PERL_MM_OPT;
 
 export NACL_SDK_ROOT=/home/thunt/sgx/nacl_sdk/pepper_canary
+
+
+#. /home/thunt/torch/install/bin/torch-activate

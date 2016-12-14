@@ -16,11 +16,11 @@ set expandtab
 set shiftwidth=3
 set laststatus=2
 let base16colorspace=256
-colorscheme base16-monokai
+colorscheme solarized
 let NERDTreeIgnore = ['\.o$','\.d']
 set background=dark
 
-let base16colorspace=256
+"let base16colorspace=256
 filetype plugin indent on
 " Command Make will call make and then cwindow which
 " opens a 3 line error window if any errors are found.
