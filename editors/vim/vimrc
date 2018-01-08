@@ -3,6 +3,7 @@ set modeline
 set modelines=5
 set t_Co=16
 set autoindent
+syntax enable
 "set smartindent
 "set cindent
 "set number
@@ -15,12 +16,14 @@ let _curfile = expand("%:t")
 set expandtab
 set shiftwidth=3
 set laststatus=2
-let base16colorspace=256
+set background=dark
+let g:solarized_termtrans=1
 colorscheme solarized
 let NERDTreeIgnore = ['\.o$','\.d']
-set background=dark
+"turn off error bells
+set noeb vb t_vb=
+au GUIEnter * set vb t_vb=
 
-"let base16colorspace=256
 filetype plugin indent on
 " Command Make will call make and then cwindow which
 " opens a 3 line error window if any errors are found.
@@ -69,6 +72,7 @@ let g:rainbow_conf = {
 "autocmd FileType asciidoc  setlocal spell
 set spell
 let g:airline#extensions#whitespace#show_message = 0
+let g:airline_theme='light'
 "let g:airline_powerline_fonts = 1
 "CSCOPE
 set cscopequickfix=s-,g-,d-,c-,t-,e-,f-,i-

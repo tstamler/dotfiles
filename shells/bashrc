@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# append to history file instead of overwriting
+shopt -s histappend
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -66,7 +69,7 @@ alias l='ls -CF'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # fixes tmux colors
-alias tmux="TERM=screen-256color tmux"
+alias tmux-ssh="TERM=screen-256color tmux"
 alias vi='vim'
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -90,7 +93,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export TERM=xterm-256color
+#export TERM=xterm-256color
 # Base16 Shell
 #BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
 #[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
@@ -160,7 +163,8 @@ PERL_LOCAL_LIB_ROOT="/home/thunt/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_R
 PERL_MB_OPT="--install_base \"/home/thunt/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/thunt/perl5"; export PERL_MM_OPT;
 
-export NACL_SDK_ROOT=/home/thunt/sgx/nacl_sdk/pepper_canary
+export EDITOR=vim
+export VISUAL=vim
 
 
 #. /home/thunt/torch/install/bin/torch-activate
