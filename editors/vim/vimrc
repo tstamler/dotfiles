@@ -11,8 +11,6 @@ call pathogen#infect()
 syntax on
 color dracula
 set hidden
-au BufRead *.txt setlocal spell
-au Bufread *.tex setlocal spell
 set tabstop=3
 let _curfile = expand("%:t")
 set expandtab
@@ -88,4 +86,5 @@ function! LoadCscope()
   endif
 endfunction
 au BufEnter /* call LoadCscope()
+set textwidth=80
 
