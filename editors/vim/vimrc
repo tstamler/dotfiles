@@ -17,8 +17,10 @@ set expandtab
 set shiftwidth=3
 set laststatus=2
 set background=dark
-set guioptions -=m
-set guioptions -=T
+if has('gui_running')
+   set guioptions -=m
+   set guioptions -=T
+endif
 let NERDTreeIgnore = ['\.o$','\.d']
 "turn off error bells
 set noeb vb t_vb=
