@@ -9,17 +9,16 @@ syntax enable
 "set number
 call pathogen#infect()
 syntax on
-color dracula
+color solarized
 set hidden
-set tabstop=8
-set shiftwidth=8
+set tabstop=3
 let _curfile = expand("%:t")
+set expandtab
+set shiftwidth=3
 set laststatus=2
 set background=dark
-if has('gui_running')
-   set guioptions -=m
-   set guioptions -=T
-endif
+"set guioptions -=m
+"set guioptions -=T
 let NERDTreeIgnore = ['\.o$','\.d']
 "turn off error bells
 set noeb vb t_vb=
@@ -73,7 +72,8 @@ let g:rainbow_conf = {
 "autocmd FileType asciidoc  setlocal spell
 set spell
 let g:airline#extensions#whitespace#show_message = 0
-let g:airline_theme='light'
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
 "let g:airline_powerline_fonts = 1
 "CSCOPE
 set cscopequickfix=s-,g-,d-,c-,t-,e-,f-,i-
@@ -88,4 +88,7 @@ function! LoadCscope()
 endfunction
 au BufEnter /* call LoadCscope()
 set textwidth=80
+hi clear SpellBad
+hi SpellBad term=underline cterm=underline
+
 
