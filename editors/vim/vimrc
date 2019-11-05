@@ -1,7 +1,7 @@
 set nocompatible
 set modeline
 set modelines=5
-set t_Co=16
+"set t_Co=16
 set autoindent
 syntax enable
 "set smartindent
@@ -9,20 +9,20 @@ syntax enable
 "set number
 call pathogen#infect()
 syntax on
-color solarized
 set hidden
 set tabstop=3
 let _curfile = expand("%:t")
 set expandtab
 set shiftwidth=3
 set laststatus=2
-set background=dark
+set background=light
 "set guioptions -=m
 "set guioptions -=T
 let NERDTreeIgnore = ['\.o$','\.d']
 "turn off error bells
 set noeb vb t_vb=
 au GUIEnter * set vb t_vb=
+colorscheme dim
 
 filetype plugin indent on
 " Command Make will call make and then cwindow which
@@ -90,5 +90,5 @@ au BufEnter /* call LoadCscope()
 set textwidth=80
 hi clear SpellBad
 hi SpellBad term=underline cterm=underline
-
-
+hi Comment ctermfg=gray
+set formatoptions-=t

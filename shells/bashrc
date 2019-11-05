@@ -157,6 +157,10 @@ function __prompt_command() {
 export PROMPT_COMMAND=__prompt_command  # Func to gen PS1 after CMDs
 set -o vi
 if [ $TMUX ]; then TERM=screen-256color; fi
+export CUDA_HOME=/usr/local/cuda-10.0
+export PATH="$CUDA_HOME/bin:$PATH"
+export AVA_CHANNEL="LOCAL"
+export AVA_WPOOL="TRUE"
 
 PATH="/opt/cisco/anyconnect:/home/thunt/perl5/bin${PATH+:}${PATH}"; export PATH;
 PERL5LIB="/home/thunt/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
@@ -169,4 +173,9 @@ export VISUAL=vim
 
 
 #. /home/thunt/torch/install/bin/torch-activate
-
+export CUDA_HOME=/usr/local/cuda-10.0
+export PATH="$CUDA_HOME/bin:$PATH"
+export AVA_WPOOL="TRUE"
+export AVA_CHANNEL="TCP"
+export GOPATH=$HOME/go
+export PATH="$GOPATH/bin:/usr/local/go/bin:$PATH"
