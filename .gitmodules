@@ -52,3 +52,12 @@
 [submodule "editors/vim/vim/bundle/dracula-theme"]
 	path = editors/vim/vim/bundle/dracula-theme
 	url = https://github.com/dracula/vim.git
+[submodule "editors/vim/vim/bundle/ayu-vim"]
+	path = editors/vim/vim/bundle/ayu-vim
+	url = https://github.com/ayu-theme/ayu-vim
+[submodule "editors/vim/vim/bundle/gruvbox"]
+	path = editors/vim/vim/bundle/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
+[submodule "editors/vim/vim/bundle/vim-one"]
+	path = editors/vim/vim/bundle/vim-one
+	url = https://github.com/rakr/vim-one
