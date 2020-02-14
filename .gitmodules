@@ -61,3 +61,6 @@
 [submodule "editors/vim/vim/bundle/vim-one"]
 	path = editors/vim/vim/bundle/vim-one
 	url = https://github.com/rakr/vim-one
+[submodule "editors/vim/vim/bundle/vim-clang-format"]
+	path = editors/vim/vim/bundle/vim-clang-format
+	url = https://github.com/rhysd/vim-clang-format

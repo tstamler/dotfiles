@@ -10,7 +10,7 @@ syntax enable
 call pathogen#infect()
 syntax on
 set hidden
-set tabstop=3
+set tabstop=2
 let _curfile = expand("%:t")
 set expandtab
 set shiftwidth=3
@@ -72,7 +72,7 @@ let g:rainbow_conf = {
 "autocmd FileType asciidoc  setlocal spell
 set spell
 let g:airline#extensions#whitespace#show_message = 0
-let g:airline_theme='solarized'
+"let g:airline_theme='solarized'
 "let g:airline_solarized_bg='dark'
 "let g:airline_powerline_fonts = 1
 "CSCOPE
@@ -92,3 +92,5 @@ hi clear SpellBad
 hi SpellBad term=underline cterm=underline
 hi Comment ctermfg=gray
 set formatoptions-=t
+let g:clang_format#code_style = "google"
+let g:clang_format#auto_formatexpr = 1
