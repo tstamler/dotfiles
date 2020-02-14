@@ -15,14 +15,15 @@ let _curfile = expand("%:t")
 set expandtab
 set shiftwidth=3
 set laststatus=2
-set background=light
 "set guioptions -=m
 "set guioptions -=T
 let NERDTreeIgnore = ['\.o$','\.d']
 "turn off error bells
 set noeb vb t_vb=
 au GUIEnter * set vb t_vb=
-colorscheme dim
+set background=dark
+colorscheme gruvbox
+
 
 filetype plugin indent on
 " Command Make will call make and then cwindow which
@@ -72,8 +73,8 @@ let g:rainbow_conf = {
 "autocmd FileType asciidoc  setlocal spell
 set spell
 let g:airline#extensions#whitespace#show_message = 0
-"let g:airline_theme='solarized'
-"let g:airline_solarized_bg='dark'
+let g:airline_theme='gruvbox'
+let g:airline_bg='dark'
 "let g:airline_powerline_fonts = 1
 "CSCOPE
 set cscopequickfix=s-,g-,d-,c-,t-,e-,f-,i-
