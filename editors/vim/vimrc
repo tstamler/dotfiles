@@ -13,7 +13,7 @@ set hidden
 set tabstop=2
 let _curfile = expand("%:t")
 set expandtab
-set shiftwidth=3
+set shiftwidth=2
 set laststatus=2
 "set guioptions -=m
 "set guioptions -=T
@@ -82,4 +82,4 @@ hi SpellBad term=underline cterm=underline
 hi Comment ctermfg=gray
 set formatoptions-=t
 let g:clang_format#auto_formatexpr = 1
-nnoremap <buffer> <c-]> :YcmCompleter GoToDefinition<CR>
+nnoremap <silent> <C-]> :YcmCompleter GoToDeclaration<CR>
