@@ -8,7 +8,6 @@ syntax enable
 "set cindent
 "set number
 call pathogen#infect()
-syntax on
 set hidden
 set tabstop=2
 let _curfile = expand("%:t")
@@ -24,7 +23,6 @@ au GUIEnter * set vb t_vb=
 set background=dark
 colorscheme gruvbox
 
-
 filetype plugin indent on
 " Command Make will call make and then cwindow which
 " opens a 3 line error window if any errors are found.
@@ -34,7 +32,7 @@ autocmd QuickFixCmdPost    l* nested lwindow
 autocmd QuickFixCmdPost  make nested botright cwindow
 set colorcolumn=+1
 
-nmap t :TagbarToggle<CR>
+"nmap t :TagbarToggle<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 set wildmode=longest,list,full
@@ -64,13 +62,6 @@ let g:rainbow_conf = {
 \   }
 \}
 
-"I'm bad at spelling
-" Git commits.
-"autocmd FileType gitcommit setlocal spell
-" Subversion commits.
-"autocmd FileType svn       setlocal spell
-" Mercurial commits.
-"autocmd FileType asciidoc  setlocal spell
 set spell
 let g:airline#extensions#whitespace#show_message = 0
 let g:airline_theme='gruvbox'
@@ -81,5 +72,6 @@ hi clear SpellBad
 hi SpellBad term=underline cterm=underline
 hi Comment ctermfg=gray
 set formatoptions-=t
+let g:clang_format#detect_style_file = 1
 let g:clang_format#auto_formatexpr = 1
 nnoremap <silent> <C-]> :YcmCompleter GoToDeclaration<CR>

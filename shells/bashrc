@@ -174,8 +174,9 @@ export VISUAL=vim
 
 #. /home/thunt/torch/install/bin/torch-activate
 export CUDA_HOME=/usr/local/cuda-10.0
-export PATH="$CUDA_HOME/bin:$PATH"
+export PATH="$CUDA_HOME/bin:$HOME/.local/bin:$PATH"
 export AVA_WPOOL="TRUE"
 export AVA_CHANNEL="TCP"
 export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:/usr/local/go/bin:$PATH"
+export TZ="UTC"
