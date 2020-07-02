@@ -71,7 +71,7 @@ set textwidth=80
 hi clear SpellBad
 hi SpellBad term=underline cterm=underline
 hi Comment ctermfg=gray
-set formatoptions-=t
+set formatoptions-=tc
 let g:clang_format#detect_style_file = 1
 let g:clang_format#auto_formatexpr = 1
 nnoremap <silent> <C-]> :YcmCompleter GoToDeclaration<CR>
