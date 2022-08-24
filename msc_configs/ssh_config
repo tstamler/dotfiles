@@ -1,10 +1,21 @@
-Host heroku.com
- HostName heroku.com
- Port 22
- IdentitiesOnly yes
- IdentityFile ~/.ssh/id_rsa
- TCPKeepAlive yes
- User tylerscotthunt@gmail.com
+User thunt
+
+Host auth-test.k9h.dev
+  ProxyCommand bash -c '/usr/local/bin/cloudflared access ssh-gen --hostname %h; ssh -tt %r@cfpipe-auth-test.k9h.dev >&2 <&1'
+
+Host cfpipe-auth-test.k9h.dev
+  HostName auth-test.k9h.dev
+  ProxyCommand /usr/local/bin/cloudflared access ssh --hostname %h
+  IdentityFile ~/.cloudflared/auth-test.k9h.dev-cf_key
+  CertificateFile ~/.cloudflared/auth-test.k9h.dev-cf_key-cert.pub
+
+Host *.k9h.dev
+  ProxyCommand /usr/local/bin/cloudflared access ssh --hostname %h
+  ServerAliveInterval 20
+  TCPKeepAlive no
+
+Host *.ktnagrph.com
+  ProxyCommand /usr/local/bin/cloudflared access ssh --hostname %h
 
 Host github github.com
  HostName github.com
@@ -13,16 +24,3 @@ Host github github.com
 Host bitbucket bitbucket.org
  HostName bitbucket.org
  User git
-
-## Host *.cs.utexas.edu *.csres.utexas.edu
-##  User thunt
-## 
-## Host *.csres
-##  HostName %h.utexas.edu
-##  User thunt
-## 
-## Host *.*
-##  HostName %h
-## 
-## Host *
-##  HostName %h.cs.utexas.edu
