@@ -90,3 +90,6 @@
 	path = editors/vim/vim/bundle/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe
 	shallow = true
+[submodule "editors/vim/vim/bundle/ag"]
+	path = editors/vim/vim/bundle/ag
+	url = https://github.com/rking/ag.vim

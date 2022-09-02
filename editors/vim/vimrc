@@ -67,11 +67,19 @@ let g:airline#extensions#whitespace#show_message = 0
 let g:airline_theme='gruvbox'
 let g:airline_bg='dark'
 "let g:airline_powerline_fonts = 1
-set textwidth=80
 hi clear SpellBad
 hi SpellBad term=underline cterm=underline
 hi Comment ctermfg=gray
 set formatoptions-=tc
 let g:clang_format#detect_style_file = 1
 let g:clang_format#auto_formatexpr = 1
+autocmd FileType go set formatprg=gofmt
 nnoremap <silent> <C-]> :YcmCompleter GoToDeclaration<CR>
+
+"fun! SetMyTodos()
+"  syn match myTodos /node/
+"  hi link myTodos Todo
+"endfu
+"autocmd bufenter * :call SetMyTodos()
+"autocmd filetype * :call SetMyTodos()
+let g:ycm_clangd_args=['--header-insertion=never']
