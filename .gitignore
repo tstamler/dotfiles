@@ -1,0 +1,5 @@
+# nfs garbage
+.nfs*
+
+# plug managed files
+/editors/vim/vim/plugged

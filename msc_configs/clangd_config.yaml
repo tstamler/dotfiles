@@ -1,0 +1,2 @@
+CompileFlags:                      # Tweak the parse settings
+  Remove: [-W*, -mtune=*, -marg=*] # strip all other warning-related flags

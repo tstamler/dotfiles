@@ -1,10 +1,13 @@
 #!/bin/bash
 set -e
 
+cd $(dirname $0)
+
 mkdir -p $HOME/.ssh
+mkdir -p $HOME/.config/clangd
+test -L $HOME/.config/clangd/config.yaml || ln -s $PWD/msc_configs/clangd_config.yaml ./.config/clangd/config.yaml
 test -L $HOME/.ssh/config || ln -s $PWD/msc_configs/ssh_config $HOME/.ssh/config
 test -L $HOME/.bashrc     || ln -s $PWD/shells/bashrc $HOME/.bashrc
 test -L $HOME/.vim        || ln -s $PWD/editors/vim/vim $HOME/.vim
 test -L $HOME/.vimrc      || ln -s $PWD/editors/vim/vimrc $HOME/.vimrc
 test -L $HOME/.tmux.conf  || ln -s $PWD/msc_configs/tmux.conf $HOME/.tmux.conf
-(cd $PWD/editors/vim/vim/bundle/YouCompleteMe && ./install.py --clangd-completer)
