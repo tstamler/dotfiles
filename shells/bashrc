@@ -180,3 +180,19 @@ export AVA_CHANNEL="TCP"
 export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:/usr/local/go/bin:$PATH"
 export TZ="UTC"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/thunt/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/thunt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/thunt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/thunt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
