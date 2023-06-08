@@ -1,4 +1,4 @@
-User thunt
+User tim
 
 Host auth-test.k9h.dev
   ProxyCommand bash -c '/usr/local/bin/cloudflared access ssh-gen --hostname %h; ssh -tt %r@cfpipe-auth-test.k9h.dev >&2 <&1'

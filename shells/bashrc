@@ -162,17 +162,17 @@ export PATH="$CUDA_HOME/bin:$PATH"
 export AVA_CHANNEL="LOCAL"
 export AVA_WPOOL="TRUE"
 
-PATH="/opt/cisco/anyconnect:/home/thunt/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/home/thunt/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/thunt/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/thunt/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/thunt/perl5"; export PERL_MM_OPT;
+PATH="/opt/cisco/anyconnect:/home/tim/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="/home/tim/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/tim/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/tim/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/tim/perl5"; export PERL_MM_OPT;
 
 export EDITOR=vim
 export VISUAL=vim
 
 
-#. /home/thunt/torch/install/bin/torch-activate
+#. /home/tim/torch/install/bin/torch-activate
 export CUDA_HOME=/usr/local/cuda-10.0
 export PATH="$CUDA_HOME/bin:$HOME/.local/bin:$PATH"
 export AVA_WPOOL="TRUE"
@@ -183,14 +183,14 @@ export TZ="UTC"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/thunt/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/tim/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/thunt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/thunt/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/tim/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/tim/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/thunt/miniconda3/bin:$PATH"
+        export PATH="/home/tim/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup

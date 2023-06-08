@@ -4,7 +4,7 @@ hi LspWarning ctermfg=Yellow
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
@@ -17,7 +17,7 @@ Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
-colorscheme gruvbox
+"colorscheme gruvbox
 set nocompatible
 set modeline
 set modelines=5
